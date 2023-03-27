@@ -7,14 +7,17 @@ import robStyles from "@/styles/robsStyles/Flights.module.css";
 import { BsFillRocketTakeoffFill } from 'react-icons/bs'
 import { useEffect, useState } from "react";
 const Flights = () => {
-  // function handleSubmit=(e)=>{
-  console.log("ZHello i am here");
-  // }
   <h1>Flights</h1>;
 
   console.log(supabase);
   const [fetchError, setFetchError] = useState(null);
   const [flights, setflights] = useState(null);
+
+  const handleDelete = (id) => {
+    setflights((prevFlights) => {
+      return prevFlights.filter((flight) => flight.id !== id);
+    });
+  };
 
   useEffect(() => {
     const fecthFlights = async () => {
@@ -25,6 +28,7 @@ const Flights = () => {
         console.log("Error: ", error);
       }
       if (data) {
+        console.log(data);
         setflights(data);
         setFetchError(null);
       }
@@ -33,9 +37,8 @@ const Flights = () => {
   }, []);
 
   return (
-    <>
-    <div className={robStyles.flightsBox} >
-      <p className={robStyles.textBox} >
+    <div className={robStyles.flightsBox}>
+      <p className={robStyles.textBox}>
         Welcome to Starbound Flights, the premier space tourism company for
         those seeking a truly out-of-this-world experience. Our mission is to
         make space travel accessible and safe for everyone, so that you can
@@ -54,6 +57,7 @@ const Flights = () => {
         truly unforgettable experience. So why wait? Contact us today to start
         planning your journey to the stars with Starbound!
       </p>
+
       <div className={robStyles.btnBox} >
         <Link href={"/FlightCard"} >ADD FLIGHTS HERE <BsFillRocketTakeoffFill/> </Link>
       </div>
@@ -63,13 +67,24 @@ const Flights = () => {
           {/* {flights.map((flight) => (
             <FlightCard key={flight.id} flight={flight} />
           ))} */}
+
         </div>
-      )}
+        {fetchError && <p>{fetchError}</p>}
+        {flights && (
+          <div className="flights">
+            {flights.map((flight) => (
+              <FlightCard
+                key={flight.id}
+                flight={flight}
+                onDelete={handleDelete}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div class="main"></div>
     </div>
-    <div class="main"></div>
-    </>
-    
-    
   );
 };
 
