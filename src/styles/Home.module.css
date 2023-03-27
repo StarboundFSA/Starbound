@@ -51,19 +51,11 @@
   transition-timing-function: linear;
 }
 
-.someElseBox:hover {
-  /* background-color: darkgray; */
-  color: silver;
-}
-
-.outFlightBox:hover {
-  /* background-color: darkgray; */
-  color: silver;
-}
-
+.outFlightBox:hover,
+.someElseBox:hover,
 .welcBox:hover {
-  /* background-color: darkgray; */
-  color: silver;
+  background-color: #00308F;
+  color: whitesmoke;
 }
 
 /* --- Robs Styling --- */
@@ -174,8 +166,11 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: silver;
+  /* color: silver; */
   /* border-color: #0070f3; */
+
+  background-color: #00308F;
+  color: whitesmoke;
 }
 
 .card h2 {
@@ -229,8 +224,9 @@
 }
 
 .btnStyle:hover{
-  background-color: blue;
-  color: silver;
+  background-color: #00308F;
+  /* color: whitesmoke; */
+  color: goldenrod;
  }
  .boxInput{
   height: 200px;

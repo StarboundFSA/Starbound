@@ -17,20 +17,20 @@
 .btnBox {
     margin: 5px;
     padding: 5px;
-    border: solid silver 5px;
-    color: silver;
-    display: inline;
+    border: solid whitesmoke 5px;
+    color: #2F4F4F;
+    display: inline-block;
     transition-property: background color;
     transition-duration: 2s;
     transition-timing-function: linear;
 }
 
 .flightsBox:hover {
-    /* background-color: darkgray; */
-    color: silver;
+    background-color: #00308F;
+    color: whitesmoke;
   }
 
 .btnBox:hover {
-    background-color: blue;
-    color: silver;
+    background-color: #00308F;
+    color: goldenrod;
 }

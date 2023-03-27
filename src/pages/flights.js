@@ -4,6 +4,7 @@ import supabase from "../../supabase";
 // import FlightCard from "./flightCard";
 import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/Flights.module.css";
+import { BsFillRocketTakeoffFill } from 'react-icons/bs'
 import { useEffect, useState } from "react";
 const Flights = () => {
   // function handleSubmit=(e)=>{
@@ -54,7 +55,7 @@ const Flights = () => {
         planning your journey to the stars with Starbound!
       </p>
       <div className={robStyles.btnBox} >
-        <button className={styles.btnstyle}>Add a new flight</button>
+        <Link href={"/FlightCard"} >ADD FLIGHTS HERE <BsFillRocketTakeoffFill/> </Link>
       </div>
       {fetchError && <p>{fetchError}</p>}
       {flights && (

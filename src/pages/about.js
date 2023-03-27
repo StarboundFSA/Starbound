@@ -43,7 +43,7 @@ const About = () => {
         <div className={styles.abtBttnBox}>
           <Link href='/aboutus' >
             <p>
-              Meet the Founders Click Here? <BsFillRocketTakeoffFill /> 
+              Wanna Meet the Founders Click Here? <BsFillRocketTakeoffFill /> 
             </p>
           </Link>
         </div>
