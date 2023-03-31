@@ -85,7 +85,7 @@ const Home = ({session, supabase}) => {
       </div>
       </div>
       <div className="main">
-        {loggedIn ? <ChatWidget supabase={supabase} /> : <Auth supabase={supabase} />}
+        {loggedIn ? <ChatWidget session={session} supabase={supabase} /> : <Auth supabase={supabase} />}
       </div>
     </>
   );

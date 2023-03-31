@@ -1,8 +1,8 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
-import { useState, useEffect, createRef } from "react";
+import { useState, useEffect, createRef, useRef } from "react";
 
-const ChatWidget = ({supabase}) => {
+const ChatWidget = ({ session, supabase }) => {
     const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
     const btnDropdownRef = createRef();
     const popoverDropdownRef = createRef();
@@ -27,6 +27,7 @@ const ChatWidget = ({supabase}) => {
         setDropdownPopoverShow(false);
     };
     const [messages, setMessages] = useState([]);
+    const message = useRef('')
     useEffect(async () => {
         const getMessages = async () => {  
             let { data: messages, error } = await supabase
@@ -43,12 +44,25 @@ const ChatWidget = ({supabase}) => {
                 'postgres_changes', 
                 { event: 'INSERT', schema: 'public', table: 'message' },
                 (payload) => {
-                    console.log('Change received!', payload)
+                    setMessages(previous => [].concat(previous, payload.new))
                 })
                 .subscribe()
         };
         await setMsgsSub();
     }, []);
+
+    const sendMessage = async e => {
+        e.preventDefault()
+
+        const content = message.current.value
+            await supabase
+            .from('message')
+            .insert([
+                { content, user_id: session.user.id }
+            ]);
+
+        message.current.value = ''
+    };
     
     // useEffect(() => {
     //     const checkClickTarget = e => {
@@ -147,21 +161,23 @@ return (
                                                     d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
                                             </svg>
                                         </button>
-                                        <input type="text" placeholder="Message"
-                                            className="block w-full py-2 pl-4 mx-3 bg-gray-200 rounded-full outline-none focus:text-gray-700"
-                                            name="message" required />
+                                        <form onSubmit={sendMessage}>
+                                            <input type="text" placeholder="Message"
+                                                className="block w-full py-2 pl-4 mx-3 bg-gray-200 rounded-full outline-none focus:text-gray-700"
+                                                required ref={message} />
+                                            <button type="submit">
+                                                <svg className="w-5 h-5 text-gray-600 origin-center transform rotate-90" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                    <path
+                                                        d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                                </svg>
+                                            </button>
+                                        </form>
                                         <button>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24"
                                                 stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                                     d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                                            </svg>
-                                        </button>
-                                        <button type="submit">
-                                            <svg className="w-5 h-5 text-gray-600 origin-center transform rotate-90" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20" fill="currentColor">
-                                                <path
-                                                    d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
                                             </svg>
                                         </button>
                                     </div>
