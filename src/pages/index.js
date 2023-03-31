@@ -1,11 +1,15 @@
 import react from "react";
 import Link from "next/link";
 import supabase from "../../supabase";
+import Auth from "../../components/Auth";
+import Login from "../Login";
 import FlightCard from "./FlightCard";
 import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/Flights.module.css";
 import { useEffect, useState } from "react";
 import Checkout from "./checkout";
+import ChatWidget from "../../components/ChatWidget";
+
 const Home = () => {
   console.log(supabase);
   const [fetchError, setFetchError] = useState(null);
@@ -30,6 +34,7 @@ const Home = () => {
 
   return (
     <>
+    <Login />
       <div className={styles.indexBox}>
         <div className={styles.welcBox}>
           <h1>WELCOME TO STARBOUND</h1>
@@ -79,7 +84,9 @@ const Home = () => {
         <p>Add some images</p>
       </div>
       </div>
-      <div className="main"></div>
+      <div className="main">
+        {loggedIn ? <ChatWidget supabase={supabase} /> : <Auth supabase={supabase} />}
+      </div>
     </>
   );
 };

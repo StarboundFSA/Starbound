@@ -1,5 +1,6 @@
 import Head from "next/head";
 import react from "react";
+import supabase from '../../supabase'
 import NavigationBar from "/components/NavigationBar";
 import ChatWidget from "../../components/ChatWidget";
 import Footer from "/components/Footer";
@@ -8,6 +9,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 
 function MyApp({ Component, pageProps }) {
+  const { session, supabase } = supabase();
   return (
     <>
       <Head>
@@ -18,7 +20,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <NavigationBar />
-      <Component {...pageProps} />
+      <Component session={session} supabase={supabase} {...pageProps} />
       <ChatWidget />
       <Footer />
     </>

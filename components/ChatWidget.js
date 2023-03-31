@@ -2,7 +2,7 @@ import React from "react";
 import { createPopper } from "@popperjs/core";
 import { useState, useEffect, createRef } from "react";
 
-const ChatWidget = () => {
+const ChatWidget = ({supabase}) => {
     const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
     const btnDropdownRef = createRef();
     const popoverDropdownRef = createRef();
@@ -26,6 +26,18 @@ const ChatWidget = () => {
     const closeDropdownPopover = () => {
         setDropdownPopoverShow(false);
     };
+    const [messages, setMessages] = useState([]);
+    useEffect(async () => {
+        const getMessages = async () => {  
+            let { data: messages, error } = await supabase
+                .from('message')
+                .select('*');
+            setMessages(messages);
+        };
+        
+        await getMessages();
+    }, []);
+    
     // useEffect(() => {
     //     const checkClickTarget = e => {
     //         if (dropdownPopoverShow && btnDropdownRef.current && !btnDropdownRef.current.contains(e.target))
