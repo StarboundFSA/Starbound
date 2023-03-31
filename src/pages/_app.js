@@ -9,7 +9,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 
 function MyApp({ Component, pageProps }) {
-  const { session, supabase } = supabase();
+  const { currentUser, session, supabase } = supabase();
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <NavigationBar />
-      <Component session={session} supabase={supabase} {...pageProps} />
+      <Component currentUser={currentUser} session={session} supabase={supabase} {...pageProps} />
       <ChatWidget />
       <Footer />
     </>

@@ -39,9 +39,9 @@ useEffect(async () => {
 
     const foundUser = await getCurrentUser();
     setCurrentUser(foundUser);
-});
+}, [session]);
 
-    return { session, supabase };
+    return { currentUser, session, supabase };
 };
 
 export default supabase;

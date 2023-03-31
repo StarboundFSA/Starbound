@@ -2,7 +2,9 @@ import React from "react";
 import { createPopper } from "@popperjs/core";
 import { useState, useEffect, createRef, useRef } from "react";
 
-const ChatWidget = ({ session, supabase }) => {
+const ChatWidget = ({ currentUser, session, supabase }) => {
+    if (!currentUser) return null; // Maybe add a loading screen to delay the render to make sure the Async function finishes excecution before the rest of the code loads in
+
     const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
     const btnDropdownRef = createRef();
     const popoverDropdownRef = createRef();
@@ -117,7 +119,7 @@ return (
                                     <div className="relative flex items-center p-3 border-b rounded-t-lg border-gray-300 bg-[#3fb0ac]">
                                     <img className="object-cover w-10 h-10 rounded-full"
                                         src="" alt="username" />
-                                    <span className="block ml-2 font-bold text-gray-600">Placeholder Name</span>
+                                    <span className="block ml-2 font-bold text-gray-600">{currentUser.username ? currentUser.username : session.user.email}</span>
                                     <span className="absolute w-3 h-3 bg-green-600 rounded-full left-10 top-3">
                                     </span>
                                     </div>

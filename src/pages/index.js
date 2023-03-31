@@ -2,7 +2,6 @@ import react from "react";
 import Link from "next/link";
 import supabase from "../../supabase";
 import Auth from "../../components/Auth";
-import Login from "../Login";
 import FlightCard from "./FlightCard";
 import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/Flights.module.css";
@@ -10,13 +9,13 @@ import { useEffect, useState } from "react";
 import Checkout from "./checkout";
 import ChatWidget from "../../components/ChatWidget";
 
-const Home = ({session, supabase}) => {
-  <Login />
-  console.log(supabase);
+const Home = ({currentUser, session, supabase}) => {
+  const [loggedIn, setLoggedIn] = useState(false);
   const [fetchError, setFetchError] = useState(null);
   const [flights, setflights] = useState(null);
 
   useEffect(() => {
+    setLoggedIn(!!session);
     const fetchFlights = async () => {
       const { data, error } = await supabase.from("flight").select();
       if (error) {
@@ -31,7 +30,7 @@ const Home = ({session, supabase}) => {
       }
     };
     fetchFlights();
-  }, []);
+  }, [session]);
 
   return (
     <>
