@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 import Checkout from "./checkout";
 import ChatWidget from "../../components/ChatWidget";
 
-const Home = () => {
+const Home = ({session, supabase}) => {
+  <Login />
   console.log(supabase);
   const [fetchError, setFetchError] = useState(null);
   const [flights, setflights] = useState(null);
@@ -34,7 +35,6 @@ const Home = () => {
 
   return (
     <>
-    <Login />
       <div className={styles.indexBox}>
         <div className={styles.welcBox}>
           <h1>WELCOME TO STARBOUND</h1>
