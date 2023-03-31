@@ -36,6 +36,18 @@ const ChatWidget = ({supabase}) => {
         };
 
         await getMessages();
+
+        const setMsgsSub = async () => {
+            await supabase.channel('custom-insert-channel')
+                .on(
+                'postgres_changes', 
+                { event: 'INSERT', schema: 'public', table: 'message' },
+                (payload) => {
+                    console.log('Change received!', payload)
+                })
+                .subscribe()
+        };
+        await setMsgsSub();
     }, []);
     
     // useEffect(() => {
