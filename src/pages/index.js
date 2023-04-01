@@ -1,6 +1,5 @@
 import react from "react";
 import Link from "next/link";
-import supabase from "../../supabase";
 import Auth from "../../components/Auth";
 import FlightCard from "./FlightCard";
 import styles from "@/styles/Home.module.css";
@@ -84,7 +83,7 @@ const Home = ({currentUser, session, supabase}) => {
       </div>
       </div>
       <div className="main">
-        {loggedIn ? <ChatWidget session={session} supabase={supabase} /> : <Auth supabase={supabase} />}
+        {loggedIn ? <ChatWidget currentUser={currentUser} session={session} supabase={supabase} /> : <Auth supabase={supabase} />}
       </div>
     </>
   );

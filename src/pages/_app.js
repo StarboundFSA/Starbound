@@ -1,6 +1,6 @@
 import Head from "next/head";
 import react from "react";
-import supabase from '../../supabase'
+import useSupabase from '../../supabase'
 import NavigationBar from "/components/NavigationBar";
 import ChatWidget from "../../components/ChatWidget";
 import Footer from "/components/Footer";
@@ -9,7 +9,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 
 function MyApp({ Component, pageProps }) {
-  const { currentUser, session, supabase } = supabase();
+  const { currentUser, session, supabase } = useSupabase();
   return (
     <>
       <Head>
