@@ -1,6 +1,6 @@
 import Head from "next/head";
 import react from "react";
-import useSupabase from '../../supabase'
+import useSupabase from "../../supabase";
 import NavigationBar from "/components/NavigationBar";
 import ChatWidget from "../../components/ChatWidget";
 import Footer from "/components/Footer";
@@ -20,7 +20,12 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <NavigationBar />
-      <Component currentUser={currentUser} session={session} supabase={supabase} {...pageProps} />
+      <Component
+        currentUser={currentUser}
+        session={session}
+        supabase={supabase}
+        {...pageProps}
+      />
       <ChatWidget />
       <Footer />
     </>

@@ -4,36 +4,36 @@ import supabase from "../../supabase";
 
 const Users = () => {
   const [userError, setUserError] = useState(null);
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const getUsers = async () => {
       const { data, error } = await supabase.from("users").select();
       if (error) {
-        setUserError("could not fetch user data")
-        setUsers(null)
+        setUserError("could not fetch user data");
+        setUsers(null);
       }
       if (data) {
         setUsers(data);
-        setUserError(null)
+        setUserError(null);
       }
-    }
-    console.log(users)
-    getUsers()
-  }, [])
- 
+    };
+    console.log(users);
+    getUsers();
+  }, []);
+
   return (
     <>
-      
-        {users.map((element, idx) => {
-          return (
-            <div className="userCards">
-              <p>{element.first_name} {element.last_name}</p>
-              <p>{element.isAdmin}</p>
-            </div>
-          )
-        })}
-      
+      {users.map((element, idx) => {
+        return (
+          <div className="userCards">
+            <p>
+              {element.first_name} {element.last_name}
+            </p>
+            <p>{element.isAdmin}</p>
+          </div>
+        );
+      })}
     </>
   );
 };

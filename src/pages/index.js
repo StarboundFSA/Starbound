@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Checkout from "./checkout";
 import ChatWidget from "../../components/ChatWidget";
 
-const Home = ({currentUser, session, supabase}) => {
+const Home = ({ currentUser, session, supabase }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [fetchError, setFetchError] = useState(null);
   const [flights, setflights] = useState(null);
@@ -52,38 +52,45 @@ const Home = ({currentUser, session, supabase}) => {
         </div>
       </div>
       <div>
-      <div className={styles.outFlightBox}>
-        <h1>Flights departing soon...</h1>
+        <div className={styles.outFlightBox}>
+          <h1>Flights departing soon...</h1>
 
-        <div>
-          <div className={robStyles.flightsBox}>
-            {fetchError && <p>{fetchError}</p>}
-            {flights && (
-              <>
-                {flights.map((flight) => (
-                  <>
-                    <h3>Departure Origon: {flight.depart}</h3>
-                    <p>Flight Time: {flight.departime}</p>
-                    <p>Flight Date: {flight.depardate}</p>
-
-                    <hr></hr>
-                  </>
-                ))}
-              </>
-            )}
-            <button className={styles.btnStyle}>
-              <Link href="/flights">More Flights</Link>
-            </button>
+          <div>
+            <div className={robStyles.flightsBox}>
+              {fetchError && <p>{fetchError}</p>}
+              {flights && (
+                <>
+                  {flights.map((flight) => (
+                    <div key={flight.id}>
+                      <h3>Departure Origin: {flight.depart}</h3>
+                      <p>Flight Time: {flight.departime}</p>
+                      <p>Flight Date: {flight.depardate}</p>
+                      <hr />
+                    </div>
+                  ))}
+                </>
+              )}
+              <button className={styles.btnStyle}>
+                <Link href="/flights">More Flights</Link>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.someElseBox}>
-        <h1>Graphics box</h1>
-        <p>Add some images</p>
-      </div>
+        <div className={styles.someElseBox}>
+          <h1>Graphics box</h1>
+          <p>Add some images</p>
+        </div>
       </div>
       <div className="main">
-        {loggedIn ? <ChatWidget currentUser={currentUser} session={session} supabase={supabase} /> : <Auth supabase={supabase} />}
+        {loggedIn ? (
+          <ChatWidget
+            currentUser={currentUser}
+            session={session}
+            supabase={supabase}
+          />
+        ) : (
+          <Auth supabase={supabase} />
+        )}
       </div>
     </>
   );

@@ -13,7 +13,7 @@
   block-size: fit-content;
   text-align: center;
   /* border: solid whitesmoke 0.02px; */
-  color: 	whitesmoke;
+  color: whitesmoke;
   transition-property: background color;
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -33,7 +33,7 @@
   padding: 15px;
   display: flex inline;
   float: left;
- 
+
   color: whitesmoke;
   transition-property: background color;
   transition-duration: 1s;
@@ -46,7 +46,7 @@
   display: flex inline;
   float: right;
   border: solid whitesmoke 5px;
-  color: 	#2F4F4F;
+  color: #2f4f4f;
   transition-property: background color;
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -69,15 +69,14 @@
 
 /* --- Robs Styling --- */
 
-
 .container {
   padding: 0 2rem;
   background-color: #f7f3ee;
 }
-.users{
+.users {
   background-color: rgb(162, 158, 158);
 }
-.destination{
+.destination {
   background-color: aquamarine;
 }
 .main {
@@ -89,7 +88,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(244, 238, 238);
-} 
+}
 .departing-soon * {
   background-color: aqua;
 }
@@ -137,7 +136,7 @@
   line-height: 1.5;
   font-size: 1.5rem;
 }
-.departingSoon{
+.departingSoon {
   background-color: chocolate;
 }
 .code {
@@ -161,7 +160,7 @@
   margin: 10px;
   padding: 10px;
   text-align: left;
-  color: #2F4F4F;
+  color: #2f4f4f;
   text-decoration: none;
   border: solid whitesmoke 5px;
   border-radius: 10px;
@@ -207,16 +206,16 @@
   }
 }
 
-.sizingBox{
+.sizingBox {
   width: 350px;
   height: 330px;
   border-radius: 15px;
 }
-.btnStyle{
+.btnStyle {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  color: 	#2F4F4F;
+  color: #2f4f4f;
   /* background-color: rgb(198, 188, 188); */
   border-radius: 15px;
   border: solid whitesmoke 1px;
@@ -234,20 +233,17 @@
   transition-timing-function: linear;
 }
 
-.btnStyle:hover{
+.btnStyle:hover {
   background-color: blue;
   color: silver;
- }
- .boxInput{
+}
+.boxInput {
   height: 200px;
- }
- .carditem:hover{
-  color: red
- }
- .companyLogo:hover{
-cursor: pointer;
- }
+}
+.carditem:hover {
+  color: red;
+}
+.companyLogo:hover {
+  cursor: pointer;
+}
 /* boarding pass  */
-
-
-

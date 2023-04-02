@@ -121,7 +121,8 @@ const AddItem = () => {
 
             {/* ------------------------ */}
 
-            <button className={styles.btnStyle} >Add Item
+            <button className={styles.btnStyle}>
+              Add Item
               <Link href="/store">Add Product</Link>{" "}
             </button>
           </div>
