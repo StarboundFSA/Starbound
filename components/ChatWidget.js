@@ -30,6 +30,10 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
   };
   const [messages, setMessages] = useState([]);
   const message = useRef("");
+  const [editingUsername, setEditingUsername] = useState(false);
+  const newUsername = useRef("");
+  const [users, setUsers] = useState({})
+
   useEffect(async () => {
     const getMessages = async () => {
       let { data: messages, error } = await supabase
@@ -65,6 +69,32 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
 
     message.current.value = "";
   };
+
+  const logout = async (e) => {
+    e.preventDefault();
+
+    const { error } = await supabase.auth.signOut();
+  };
+
+  const setUsername = async (e) => {
+    e.preventDefault();
+    const username = newUsername.current.value
+    await supabase
+      .from('user')
+      .insert([
+        { ...currentUser, username }
+      ], { upsert: true });
+      newUsername.current.value = "";
+      setEditingUsername(false);
+  };
+
+  useEffect(async () => {
+    const getUsers = async () => {
+      const userIds = new Set(messages.map(message => message.user_id))
+      const newUsers = await getUsersFromSupabase(users, userIds)
+      setUsers(newUsers)
+    }
+  })
 
   // useEffect(() => {
   //     const checkClickTarget = e => {
@@ -128,6 +158,21 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
                         : session.user.email}
                     </span>
                     <span className="absolute w-3 h-3 bg-green-600 rounded-full left-10 top-3"></span>
+                    <span className="absolute bottom-0 left-0">
+                      {editingUsername ? (
+                        <form onSubmit={setUsername}>
+                          <input placeholder="New Username" required ref={newUsername}></input>
+                          <button type="submit">Update Username</button>
+                        </form>
+                      ) : (
+                        <div>
+                          <button onClick={() => setEditingUsername(true)}>
+                            Edit Username
+                          </button>
+                          <button onClick={e => logout(e)}>Logout</button>
+                        </div>
+                      )}
+                    </span>
                   </div>
                   <div className="relative w-full p-6 overflow-y-auto h-[40rem] ">
                     <ul className="space-y-2">

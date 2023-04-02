@@ -9,12 +9,10 @@ import Checkout from "./checkout";
 import ChatWidget from "../../components/ChatWidget";
 
 const Home = ({ currentUser, session, supabase }) => {
-  const [loggedIn, setLoggedIn] = useState(false);
   const [fetchError, setFetchError] = useState(null);
   const [flights, setflights] = useState(null);
 
   useEffect(() => {
-    setLoggedIn(!!session);
     const fetchFlights = async () => {
       const { data, error } = await supabase.from("flight").select();
       if (error) {
@@ -29,7 +27,7 @@ const Home = ({ currentUser, session, supabase }) => {
       }
     };
     fetchFlights();
-  }, [session]);
+  }, []);
 
   return (
     <>
@@ -81,17 +79,7 @@ const Home = ({ currentUser, session, supabase }) => {
           <p>Add some images</p>
         </div>
       </div>
-      <div className="main">
-        {loggedIn ? (
-          <ChatWidget
-            currentUser={currentUser}
-            session={session}
-            supabase={supabase}
-          />
-        ) : (
-          <Auth supabase={supabase} />
-        )}
-      </div>
+      <div className="main"></div>
     </>
   );
 };

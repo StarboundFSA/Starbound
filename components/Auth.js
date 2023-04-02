@@ -4,9 +4,14 @@
 
 const Auth = ({ supabase }) => {
   const signInWithGithub = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "github",
-    });
+    const { data, error } = await supabase.auth.signInWithOAuth(
+      {
+        provider: "github",
+      },
+      {
+        redirectTo: "http://localhost:3000",
+      }
+    );
   };
   return (
     <div>

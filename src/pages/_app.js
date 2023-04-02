@@ -4,12 +4,17 @@ import useSupabase from "../../supabase";
 import NavigationBar from "/components/NavigationBar";
 import ChatWidget from "../../components/ChatWidget";
 import Footer from "/components/Footer";
+import { useEffect, useState } from "react";
 import "../styles/globals.css";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 
 function MyApp({ Component, pageProps }) {
   const { currentUser, session, supabase } = useSupabase();
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    setLoggedIn(!!session);
+  }, [session]);
   return (
     <>
       <Head>
@@ -26,7 +31,13 @@ function MyApp({ Component, pageProps }) {
         supabase={supabase}
         {...pageProps}
       />
-      <ChatWidget />
+      {loggedIn ? (
+        <ChatWidget
+          currentUser={currentUser}
+          session={session}
+          supabase={supabase}
+        />
+      ) : null}
       <Footer />
     </>
   );

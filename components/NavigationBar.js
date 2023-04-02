@@ -94,7 +94,7 @@ function NavigationBar() {
           {/* Secondary Navbar items */}
           <div className="hidden md:flex items-center space-x-3 ">
             <Link
-              href="/login"
+              href="../src/pages/Login.js"
               className="py-2 px-2 font-medium text-white bg-blue-600 rounded hover:bg-blue-800 transition duration-300"
             >
               Log In
