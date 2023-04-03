@@ -41,7 +41,7 @@ const About = () => {
         <br></br>
         <div className={robStyles.btnStyle}>
           <Link href="/aboutus">
-            <p className={styles.btnStyle} >
+            <p className={styles.btnStyle}>
               Meet the Founders Click Here? <BsFillRocketTakeoffFill />
             </p>
           </Link>

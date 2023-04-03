@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import supabase from "../../supabase";
+import useSupabase from "../../supabase";
 import styles from "@/styles/Home.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Signup() {
+  const { currentUser, session, supabase } = useSupabase();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -102,7 +103,6 @@ export default function Signup() {
     </div>
   );
 }
-
 
 //old code below
 // import { useState } from "react";

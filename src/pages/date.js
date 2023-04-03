@@ -14,8 +14,7 @@ const Date = () => {
           selected={date}
           onChange={(date) => {
             {
-              let final=date.toLocaleDateString("en-us");
-              
+              let final = date.toLocaleDateString("en-us");
 
               setDate(final);
             }

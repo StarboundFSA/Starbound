@@ -1,4 +1,4 @@
-import react,{ useState } from "react";
+import react, { useState } from "react";
 import supabase from "../../supabase";
 import styles from "@/styles/Home.module.css";
 

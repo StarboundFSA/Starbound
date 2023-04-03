@@ -10,9 +10,9 @@ const Checkout = () => {
       <div className={robStyles.chckOutBox}>
         <h1 className={robStyles.headBox}>CHECKOUT HERE</h1>
         <form className="formStyling ">
-          <div 
-          className={robStyles.allTextBox}
-          // className={styles.sizingBox}
+          <div
+            className={robStyles.allTextBox}
+            // className={styles.sizingBox}
           >
             <ul>
               <li className={robStyles.textBox}>

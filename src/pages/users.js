@@ -1,8 +1,7 @@
 import react from "react";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
-import robStyles from "@/styles/robsStyles/Users.module.css"
-
+import robStyles from "@/styles/robsStyles/Users.module.css";
 
 const Users = () => {
   const [userError, setUserError] = useState(null);

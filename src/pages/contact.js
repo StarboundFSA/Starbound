@@ -6,31 +6,46 @@ import { BsFillRocketTakeoffFill } from "react-icons/bs";
 const Contact = () => {
   return (
     <>
-    <div className={robvStyles.cnctBox} >
-      <h1 className={robvStyles.conHeadBox} >
-        Contact via, help@starbound.com, or by filling out the form
-      </h1>
-      <form>
-        <div className={robvStyles.conDtlBox}>
-          <label>YOUR NAME: </label>
-          <input className={robvStyles.conInBox} type="text" name="name" placeholder="Name Here..." />
-        </div>
-        <div className={robvStyles.conDtlBox}>
-          <label>YOUR EMAIL: </label>
-          <input className={robvStyles.conInBox} type="text" name="email" placeholder="Email Here..." />
-        </div>
-        <div className={robvStyles.conDtlBox}>
-          <label>YOUR MESSAGE: </label>
-          <textarea className={robvStyles.conComBox} type="text" name="messege" rows="5" placeholder="Message Here..." />
-        </div>
-      </form>
-      <button className={styles.btnStyle} type="submit" >
-        Send Message
-        <BsFillRocketTakeoffFill />
-      </button>
-    </div>
-    <div className="main"></div>
-
+      <div className={robvStyles.cnctBox}>
+        <h1 className={robvStyles.conHeadBox}>
+          Contact via, help@starbound.com, or by filling out the form
+        </h1>
+        <form>
+          <div className={robvStyles.conDtlBox}>
+            <label>YOUR NAME: </label>
+            <input
+              className={robvStyles.conInBox}
+              type="text"
+              name="name"
+              placeholder="Name Here..."
+            />
+          </div>
+          <div className={robvStyles.conDtlBox}>
+            <label>YOUR EMAIL: </label>
+            <input
+              className={robvStyles.conInBox}
+              type="text"
+              name="email"
+              placeholder="Email Here..."
+            />
+          </div>
+          <div className={robvStyles.conDtlBox}>
+            <label>YOUR MESSAGE: </label>
+            <textarea
+              className={robvStyles.conComBox}
+              type="text"
+              name="messege"
+              rows="5"
+              placeholder="Message Here..."
+            />
+          </div>
+        </form>
+        <button className={styles.btnStyle} type="submit">
+          Send Message
+          <BsFillRocketTakeoffFill />
+        </button>
+      </div>
+      <div className="main"></div>
 
       {/* <div className={robvStyles.cnctBox}>
         <div>

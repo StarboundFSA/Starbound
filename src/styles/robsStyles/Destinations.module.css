@@ -30,7 +30,6 @@
   transition-property: background color;
   transition-duration: 2s;
   transition-timing-function: linear;
- 
 }
 
 .desPlntsText {
@@ -43,7 +42,7 @@
   margin: 5px;
   padding: 5px;
   border: solid whitesmoke 2px;
-  color: 	#2F4F4F;
+  color: #2f4f4f;
   display: inline-block;
   transition-property: background color;
   transition-duration: 2s;
@@ -51,11 +50,11 @@
 }
 
 .desPlntsText:hover {
-  background-color: #00308F;
+  background-color: #00308f;
   color: whitesmoked;
 }
 
 .desBttn:hover {
-  background-color: #00308F;
+  background-color: #00308f;
   color: whitesmoked;
 }

@@ -15,7 +15,6 @@ const Time = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     // console.log("Company Name:", startTime);
   };
 
@@ -38,7 +37,9 @@ const Time = () => {
           showYearDropdown
           scrollableYearDropdown
         />
-        <button type="submit" className={styles.btnStyle}>Submit</button>
+        <button type="submit" className={styles.btnStyle}>
+          Submit
+        </button>
       </form>
     </div>
   );

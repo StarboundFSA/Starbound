@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/Training.module.css";
-import Train3 from '../../components/trainingGames/train3'
+import Train3 from "../../components/trainingGames/train3";
 
 import Link from "next/link";
 
@@ -13,12 +13,12 @@ const Training3 = () => {
 
         <div className={robStyles.trainingBox}>
           <h1>TRAINING PAGE 3</h1>
-          < Train3 />
-          <div className={robStyles.lowBar} >
+          <Train3 />
+          <div className={robStyles.lowBar}>
             <button className={styles.btnStyle}>
               <Link href="/training2">{"PREV"}</Link>
             </button>
-            <h2 className={styles.btnStyle} >PROGRESS = 66%</h2>
+            <h2 className={styles.btnStyle}>PROGRESS = 66%</h2>
             <button className={styles.btnStyle}>
               <Link href="/training4">{"NEXT"}</Link>
             </button>

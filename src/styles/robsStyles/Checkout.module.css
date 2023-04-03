@@ -1,53 +1,51 @@
 .chckOutBox {
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .headBox {
-    margin: 5px;
-    padding: 5px;
-    border: solid whitesmoke 5px;
-    color: 	whitesmoke;
-    display: flex;
-    /* position: relative; */
-    justify-content: center;
-    font-size: xx-large;
-
+  margin: 5px;
+  padding: 5px;
+  border: solid whitesmoke 5px;
+  color: whitesmoke;
+  display: flex;
+  /* position: relative; */
+  justify-content: center;
+  font-size: xx-large;
 }
 
 .allTextBox {
-    margin: 5px;
-    padding: 5px;
-    border: solid whitesmoke 5px;
-    display: flex;
-    justify-content: space-evenly;
+  margin: 5px;
+  padding: 5px;
+  border: solid whitesmoke 5px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .textBox {
-    margin: 5px;
-    padding: 5px;
-    border: solid whitesmoke 2px;
-    color: 	#2F4F4F;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    transition-property: background color;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-    font-size: x-large;
+  margin: 5px;
+  padding: 5px;
+  border: solid whitesmoke 2px;
+  color: #2f4f4f;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition-property: background color;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  font-size: x-large;
 }
 
 .textInptBox {
-    margin: 5px;
-    padding: 5px;
-    border: solid whitesmoke 2px;
-    color: 	#2F4F4F;
-    transition-property: background color;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-
+  margin: 5px;
+  padding: 5px;
+  border: solid whitesmoke 2px;
+  color: #2f4f4f;
+  transition-property: background color;
+  transition-duration: 2s;
+  transition-timing-function: linear;
 }
 
 .btnBox {
@@ -59,6 +57,6 @@
 /* .chckOutBox:hover, */
 .textInptBox:hover,
 .textBox:hover {
-    color: whitesmoke;
-    background-color: #00308F;
+  color: whitesmoke;
+  background-color: #00308f;
 }

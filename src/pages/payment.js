@@ -16,8 +16,8 @@ const Payment = () => {
           <input
             type="text"
             className={robStlyes.crdDtlBox}
-            placeholder="###-###-###" 
-            color='#00308F'
+            placeholder="###-###-###"
+            color="#00308F"
           />
         </div>
         <div className={robStlyes.crdDtlBox}>
@@ -30,10 +30,11 @@ const Payment = () => {
         </div>
         <div className={robStlyes.crdDtlBox}>
           <label> CVV NUMBER </label>
-          <input 
-          type="text" 
-          className={robStlyes.crdDtlBox} 
-          placeholder="xxx" />
+          <input
+            type="text"
+            className={robStlyes.crdDtlBox}
+            placeholder="xxx"
+          />
         </div>
         <div className={robStlyes.crdDtlBox}>
           <label> CARD HOLDER NAME </label>

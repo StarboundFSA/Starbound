@@ -1,7 +1,7 @@
 import react from "react";
 import Link from "next/link";
 import { useState } from "react";
-import robsStyles from "@/styles/robsStyles/Flights.module.css"
+import robsStyles from "@/styles/robsStyles/Flights.module.css";
 import styles from "@/styles/Home.module.css";
 import supabase from "../../supabase";
 // import FlightCard from "../pages/flightCard";
@@ -48,76 +48,75 @@ const EditFlight = ({ flight, onEdit }) => {
 
   return (
     <>
-    <div className={robsStyles.editFlightBox} >
-    <h1 className={robsStyles.editFlightHead} >UPDATE FLIGHT INFO</h1>
-    <form className={robsStyles.editFlightDtl} >
-      <div className={robsStyles.editFlightInpt} >
-        <label htmlFor="departure" >DEPART ORIGIN:</label>
-        <input 
-        className={robsStyles.editFlightInpt}
-        type="text" 
-        id="departure"
-        value={depart}
-        onChange={(e) => setDeparture(e.target.value)}
-        placeholder="DEPART ORIGIN:" >
-        </input>
-      </div>
+      <div className={robsStyles.editFlightBox}>
+        <h1 className={robsStyles.editFlightHead}>UPDATE FLIGHT INFO</h1>
+        <form className={robsStyles.editFlightDtl}>
+          <div className={robsStyles.editFlightInpt}>
+            <label htmlFor="departure">DEPART ORIGIN:</label>
+            <input
+              className={robsStyles.editFlightInpt}
+              type="text"
+              id="departure"
+              value={depart}
+              onChange={(e) => setDeparture(e.target.value)}
+              placeholder="DEPART ORIGIN:"
+            ></input>
+          </div>
 
-      <div className={robsStyles.editFlightInpt} >
-        <label htmlFor="departuretime" >DEPART TIME:</label>
-        <input 
-        className={robsStyles.editFlightInpt}
-        type="text" 
-        id="departuretime"
-        value={depart}
-        onChange={(e) => setDeparture(e.target.value)}
-        placeholder="DEPART TIME:" >
-        </input>
-      </div>
+          <div className={robsStyles.editFlightInpt}>
+            <label htmlFor="departuretime">DEPART TIME:</label>
+            <input
+              className={robsStyles.editFlightInpt}
+              type="text"
+              id="departuretime"
+              value={depart}
+              onChange={(e) => setDeparture(e.target.value)}
+              placeholder="DEPART TIME:"
+            ></input>
+          </div>
 
-      <div className={robsStyles.editFlightInpt} >
-        <label htmlFor="departuredate" >DEPART DATE:</label>
-        <input 
-        className={robsStyles.editFlightInpt}
-        type="text" 
-        id="departuredate"
-        value={depart}
-        onChange={(e) => setDeparture(e.target.value)}
-        placeholder="DEPART DATE:" >
-        </input>
-      </div>
+          <div className={robsStyles.editFlightInpt}>
+            <label htmlFor="departuredate">DEPART DATE:</label>
+            <input
+              className={robsStyles.editFlightInpt}
+              type="text"
+              id="departuredate"
+              value={depart}
+              onChange={(e) => setDeparture(e.target.value)}
+              placeholder="DEPART DATE:"
+            ></input>
+          </div>
 
-      <div className={robsStyles.editFlightInpt} >
-        <label htmlFor="arrivaltime" >ARRIVE DATE:</label>
-        <input 
-        className={robsStyles.editFlightInpt}
-        type="text" 
-        id="arrivaltime"
-        value={depart}
-        onChange={(e) => setDeparture(e.target.value)}
-        placeholder="ARRIVE DATE:" >
-        </input>
-      </div>
+          <div className={robsStyles.editFlightInpt}>
+            <label htmlFor="arrivaltime">ARRIVE DATE:</label>
+            <input
+              className={robsStyles.editFlightInpt}
+              type="text"
+              id="arrivaltime"
+              value={depart}
+              onChange={(e) => setDeparture(e.target.value)}
+              placeholder="ARRIVE DATE:"
+            ></input>
+          </div>
 
-      <div className={robsStyles.editFlightInpt} >
-        <label htmlFor="arrivaldate" >ARRIVE DATE:</label>
-        <input 
-        className={robsStyles.editFlightInpt}
-        type="text" 
-        id="arrivaldate"
-        value={depart}
-        onChange={(e) => setDeparture(e.target.value)}
-        placeholder="ARRIVE DATE:" >
-        </input>
+          <div className={robsStyles.editFlightInpt}>
+            <label htmlFor="arrivaldate">ARRIVE DATE:</label>
+            <input
+              className={robsStyles.editFlightInpt}
+              type="text"
+              id="arrivaldate"
+              value={depart}
+              onChange={(e) => setDeparture(e.target.value)}
+              placeholder="ARRIVE DATE:"
+            ></input>
+          </div>
+          <div className={robsStyles.editFlightBttn}>
+            <button className={styles.btnStyle}>
+              <Link href="/flights">Update data</Link>
+            </button>
+          </div>
+        </form>
       </div>
-      <div className={robsStyles.editFlightBttn} >
-        <button className={styles.btnStyle}>
-      <Link href="/flights">Update data</Link>
-    </button>
-      </div>
-      
-    </form>
-    </div>
 
       {/* <div className={robsStyles.editFlightBox} >
         <h1 className={robsStyles.editFlightHead} >UPDATE FLIGHT INFO</h1>

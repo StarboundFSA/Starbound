@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styles from "@/styles/Home.module.css";
-import robStyle from "@/styles/robsStyles/Flights.module.css"
+import robStyle from "@/styles/robsStyles/Flights.module.css";
 import DatePicker from "react-datepicker";
 import TimePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,8 +23,6 @@ const AddFlight = () => {
   const [arrivedate, setArrivedate] = useState("");
   const [formError, setFormError] = useState(null);
   const handleSubmit = async (e) => {
-  
-
     // useEffect =
     //   (() => {
     //     const updateDeparTime = depardate.toLocalDate("en-US");
@@ -73,7 +71,7 @@ const AddFlight = () => {
 
   return (
     <>
-    {/* <div className={robStyle.addFlightBox} >
+      {/* <div className={robStyle.addFlightBox} >
 
       <h1 className={robStyle.addFlightHead} >ADD YOUR FLIGHTS HERE </h1>
       <form className={robStyle.addFlightSbmt} onSubmit={handleSubmit} >
@@ -93,8 +91,8 @@ const AddFlight = () => {
       </form>
     </div> */}
 
-      <div className={robStyle.addFlightBox} >
-        <h1 className={robStyle.addFlightHead} >ADD YOUR FLIGHTS HERE </h1>
+      <div className={robStyle.addFlightBox}>
+        <h1 className={robStyle.addFlightHead}>ADD YOUR FLIGHTS HERE </h1>
         <form className="Form bg-zinc-200" onSubmit={handleSubmit}>
           <div className={robStyle.addFlightSbmt}>
             {/* <div className="relative mb-3 xl:w-96" data-te-input-wrapper-init> */}
@@ -108,7 +106,7 @@ const AddFlight = () => {
                 placeholder="Departure Origon"
               />
               {/* <div className="border-red-800"> */}
-              <div  >
+              <div>
                 <hr />
               </div>
 
@@ -145,7 +143,7 @@ const AddFlight = () => {
                 placeholder="Departure time"
               /> */}
               {/* <div className="border-red-800"> */}
-              <div  >
+              <div>
                 <hr />
               </div>
               <label
@@ -175,7 +173,7 @@ const AddFlight = () => {
               /> */}
               {/* <Date /> */}
               {/* <div className="border-red-800"> */}
-              <div  >
+              <div>
                 <hr />
               </div>
               <label
@@ -205,7 +203,7 @@ const AddFlight = () => {
                 placeholder="Arrival time"
               /> */}
               {/* <div className="border-red-800"> */}
-              <div  >
+              <div>
                 <hr />
               </div>
               <label
@@ -234,7 +232,7 @@ const AddFlight = () => {
                 placeholder="Arrival Date"
               /> */}
               {/* <div className="border-red-800"> */}
-              <div  >
+              <div>
                 <hr />
               </div>
               <label

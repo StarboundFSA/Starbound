@@ -1,8 +1,10 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
+import useSupabase from "../supabase";
 import { useState, useEffect, createRef, useRef } from "react";
 
-const ChatWidget = ({ currentUser, session, supabase }) => {
+const ChatWidget = () => {
+  const { currentUser, session, supabase } = useSupabase();
   if (!currentUser) return null; // Maybe add a loading screen to delay the render to make sure the Async function finishes excecution before the rest of the code loads in
 
   const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
@@ -29,10 +31,10 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
     setDropdownPopoverShow(false);
   };
   const [messages, setMessages] = useState([]);
-  const message = useRef("");
   const [editingUsername, setEditingUsername] = useState(false);
-  const newUsername = useRef("");
   const [users, setUsers] = useState({});
+  const newUsername = useRef("");
+  const message = useRef("");
 
   useEffect(async () => {
     const getMessages = async () => {

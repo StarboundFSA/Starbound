@@ -34,7 +34,7 @@
   display: flex inline;
   float: left;
   border: solid whitesmoke 5px;
-  color: #2F4F4F;
+  color: #2f4f4f;
   transition-property: background color;
   transition-duration: 1s;
   transition-timing-function: linear;
@@ -53,18 +53,18 @@
 }
 
 .someElseBox:hover {
-  background-color: #00308F;
+  background-color: #00308f;
   color: whitesmoke;
 }
 
 .outFlightBox:hover {
-  background-color: #00308F;
+  background-color: #00308f;
   color: whitesmoke;
 }
 
 .welcBox:hover {
-  background-color: #00308F;
-  color:whitesmoke;
+  background-color: #00308f;
+  color: whitesmoke;
 }
 
 /* --- Robs Styling --- */
@@ -76,7 +76,7 @@
 /* .users{
   background-color: rgb(162, 158, 158);
 } */
-.destination{
+.destination {
   background-color: aquamarine;
 }
 .main {
@@ -177,7 +177,7 @@
 .card:focus,
 .card:active {
   color: whitesmoke;
-  background-color: #00308F;
+  background-color: #00308f;
   cursor: pointer;
   /* color: silver; */
   /* border-color: #0070f3; */
@@ -233,21 +233,20 @@
   transition-timing-function: linear;
 }
 
-.btnStyle:hover{
+.btnStyle:hover {
   background-color: whitesmoke;
-  color: #00308F;
- }
- .boxInput{
+  color: #00308f;
+}
+.boxInput {
   height: 200px;
- }
- /* .carditem:hover{
+}
+/* .carditem:hover{
   color: goldenrod
  } */
- .companyLogo:hover{
-cursor: pointer;
- }
+.companyLogo:hover {
+  cursor: pointer;
+}
 /* boarding pass  */
-
 
 /* ------------login form----------*/
 
@@ -341,7 +340,7 @@ cursor: pointer;
 .signInButton:hover {
   background-color: #b3c4de;
 }
-.passwordResetButton{
+.passwordResetButton {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #000000;
@@ -352,16 +351,12 @@ cursor: pointer;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.passwordResetButton:hover{
+.passwordResetButton:hover {
   background-color: #935f5f;
   color: #ffffff;
-
 }
 
-
 /* ------------login form----------*/
-
-
 
 /* ------------Sign up form----------*/
 
@@ -375,7 +370,6 @@ cursor: pointer;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #03031a;
   font-size: 1.2rem;
- 
 }
 
 .signUpform {
@@ -390,7 +384,6 @@ cursor: pointer;
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
-  
 }
 
 .formgroup {
@@ -426,7 +419,6 @@ cursor: pointer;
   color: #fff;
 }
 
-
 .googleButton {
   background-color: #dd4b39;
   color: #fff;
@@ -451,12 +443,5 @@ cursor: pointer;
   height: 1.5rem;
   margin-right: 0.5rem;
 }
-
-
-
-
-
-
-
 
 /* ------------Sign up form----------*/

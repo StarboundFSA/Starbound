@@ -1,62 +1,40 @@
 import styles from "@/styles/Home.module.css";
 import robStyle from "@/styles/robsStyles/bPass.module.css";
 
-
 export default function boardingpass() {
   return (
     <>
       <div className={robStyle.bPassBox}>
-        <h1 className={robStyle.bPassHead} > BOARDING PASS </h1>
-        <div className={robStyle.bPassDtlOutBox }>
-        <div className={robStyle.bPassDtl} >
+        <h1 className={robStyle.bPassHead}> BOARDING PASS </h1>
+        <div className={robStyle.bPassDtlOutBox}>
+          <div className={robStyle.bPassDtl}>
             <label>PASSENGER NAME</label>
-            <div>
-              firstNameData
-            </div>
-            <div>
-              lastNameData
-            </div>
+            <div>firstNameData</div>
+            <div>lastNameData</div>
           </div>
-          <div className={robStyle.bPassDtl} >
+          <div className={robStyle.bPassDtl}>
             <label>DEPART ORIGIN</label>
-            <div>
-              fromData
-            </div>
-            <div>
-              toData
-            </div>
+            <div>fromData</div>
+            <div>toData</div>
           </div>
-          <div className={robStyle.bPassDtl} >
+          <div className={robStyle.bPassDtl}>
             <label>GATE & TIME</label>
-            <div>
-              gateData
-            </div>
-            <div>
-              departTimeData
-            </div>
+            <div>gateData</div>
+            <div>departTimeData</div>
           </div>
-          <div className={robStyle.bPassDtl} >
+          <div className={robStyle.bPassDtl}>
             <label>SHIP & SEAT</label>
-            <div>
-              shipData
-            </div>
-            <div>
-              seatData
-            </div>
+            <div>shipData</div>
+            <div>seatData</div>
           </div>
-          <div className={robStyle.bPassDtl} >
+          <div className={robStyle.bPassDtl}>
             <label>LAUNCH CODE:</label>
-            <div>
-              codeData
-            </div>
+            <div>codeData</div>
           </div>
-          <div className={robStyle.bPassbttn} >
-            <button className={styles.btnStyle} >
-              SUBMIT HERE
-            </button>
+          <div className={robStyle.bPassbttn}>
+            <button className={styles.btnStyle}>SUBMIT HERE</button>
           </div>
         </div>
-        
 
         {/* <div className={styles.ticket}>
           <div className={styles.header}>

@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 // );
 
 const useSupabase = () => {
-    const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-      ); 
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  );
   const [currentUser, setCurrentUser] = useState(null);
   const [session, setSession] = useState(null);
   //const {data: {session, setSession }} = useState(supabase.auth.getSession());

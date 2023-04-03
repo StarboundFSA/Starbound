@@ -1,5 +1,6 @@
 import react from "react";
 import Link from "next/link";
+import useSupabase from "../../supabase";
 import Auth from "../../components/Auth";
 import FlightCard from "./FlightCard";
 import styles from "@/styles/Home.module.css";
@@ -8,7 +9,8 @@ import { useEffect, useState } from "react";
 import Checkout from "./checkout";
 import ChatWidget from "../../components/ChatWidget";
 
-const Home = ({ currentUser, session, supabase }) => {
+const Home = () => {
+  const { currentUser, session, supabase } = useSupabase();
   const [fetchError, setFetchError] = useState(null);
   const [flights, setflights] = useState(null);
 
