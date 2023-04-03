@@ -32,7 +32,7 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
   const message = useRef("");
   const [editingUsername, setEditingUsername] = useState(false);
   const newUsername = useRef("");
-  const [users, setUsers] = useState({})
+  const [users, setUsers] = useState({});
 
   useEffect(async () => {
     const getMessages = async () => {
@@ -57,6 +57,25 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
         .subscribe();
     };
     await setMsgsSub();
+
+    const setUsersSub = async () => {
+      await supabase
+        .from("user")
+        .on("UPDATE", (payload) => {
+          setUsers((users) => {
+            const user = users[payload.new.id];
+            if (user) {
+              return Object.assign({}, users, {
+                [payload.new.id]: payload.new,
+              });
+            } else {
+              return users;
+            }
+          });
+        })
+        .subscribe();
+    };
+    await setUsersSub();
   }, []);
 
   const sendMessage = async (e) => {
@@ -78,23 +97,42 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
 
   const setUsername = async (e) => {
     e.preventDefault();
-    const username = newUsername.current.value
+    const username = newUsername.current.value;
     await supabase
-      .from('user')
-      .insert([
-        { ...currentUser, username }
-      ], { upsert: true });
-      newUsername.current.value = "";
-      setEditingUsername(false);
+      .from("user")
+      .insert([{ ...currentUser, username }], { upsert: true });
+    newUsername.current.value = "";
+    setEditingUsername(false);
+  };
+
+  const getUsersFromSupabase = async (users, userIds) => {
+    const usersToGet = Array.from(userIds).filter((userId) => !users[userId]);
+    if (Object.keys(users).length && usersToGet.length == 0) return users;
+
+    const { data } = await supabase
+      .from("user")
+      .select("id,username")
+      .in("id", usersToGet);
+
+    const newUsers = {};
+    data.forEach((user) => (newUsers[user.id] = user));
+    return Object.assign({}, users, newUsers);
   };
 
   useEffect(async () => {
     const getUsers = async () => {
-      const userIds = new Set(messages.map(message => message.user_id))
-      const newUsers = await getUsersFromSupabase(users, userIds)
-      setUsers(newUsers)
-    }
-  })
+      const userIds = new Set(messages.map((message) => message.user_id));
+      const newUsers = await getUsersFromSupabase(users, userIds);
+      setUsers(newUsers);
+    };
+    await getUsers();
+  }, [messages]);
+
+  const username = (user_id) => {
+    const user = users[user_id];
+    if (!user) return "Loading User...";
+    return user.username ? user.username : "No Username";
+  };
 
   // useEffect(() => {
   //     const checkClickTarget = e => {
@@ -161,7 +199,11 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
                     <span className="absolute bottom-0 left-0">
                       {editingUsername ? (
                         <form onSubmit={setUsername}>
-                          <input placeholder="New Username" required ref={newUsername}></input>
+                          <input
+                            placeholder="New Username"
+                            required
+                            ref={newUsername}
+                          ></input>
                           <button type="submit">Update Username</button>
                         </form>
                       ) : (
@@ -169,7 +211,7 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
                           <button onClick={() => setEditingUsername(true)}>
                             Edit Username
                           </button>
-                          <button onClick={e => logout(e)}>Logout</button>
+                          <button onClick={(e) => logout(e)}>Logout</button>
                         </div>
                       )}
                     </span>
@@ -177,7 +219,10 @@ const ChatWidget = ({ currentUser, session, supabase }) => {
                   <div className="relative w-full p-6 overflow-y-auto h-[40rem] ">
                     <ul className="space-y-2">
                       {messages.map((message) => (
-                        <div key={message.id}>{message.content}</div>
+                        <div key={message.id}>
+                          <span>{username(message.user_id)}</span>
+                          <div>{message.content}</div>
+                        </div>
                       ))}
                       <li className="flex justify-start">
                         <div className="relative max-w-xl px-4 py-2 text-gray-700 bg-gray-200 rounded shadow">
