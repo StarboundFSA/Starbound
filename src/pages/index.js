@@ -74,10 +74,10 @@ const Home = ({ currentUser, session, supabase }) => {
             </div>
           </div>
         </div>
-        <div className={styles.someElseBox}>
-          <h1>Graphics box</h1>
-          <p>Add some images</p>
-        </div>
+      </div>
+      <div className={styles.someElseBox}>
+        <h1>Graphics box</h1>
+        <p>Add some images</p>
       </div>
       <div className="main"></div>
     </>
