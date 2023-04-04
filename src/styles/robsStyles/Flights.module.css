@@ -20,14 +20,14 @@
 }
 
 .btnBox {
-  margin: 5px;
-  padding: 5px;
-  border: solid whitesmoke 5px;
-  color: #2f4f4f;
-  display: inline;
-  transition-property: background color;
-  transition-duration: 2s;
-  transition-timing-function: linear;
+    margin: 5px;
+    padding: 5px;
+    border: solid whitesmoke 5px;
+    color: #2F4F4F;
+    display: inline;
+    transition-property: background color;
+    transition-duration: 0s;
+    transition-timing-function: linear;
 }
 
 /* .flightsBox:hover {

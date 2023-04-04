@@ -5,7 +5,8 @@ import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/Flights.module.css";
 import { useEffect, useState } from "react";
 import Checkout from "./checkout";
-import ChatWidget from "../../components/ChatWidget";
+import Image from "next/image";
+import gal from "../styles/assets/indxImg/galaxy.webp";
 
 const Home = () => {
   const { currentUser, session, supabase } = useSupabase();
@@ -36,6 +37,7 @@ const Home = () => {
           <h1>WELCOME TO STARBOUND</h1>
 
           <p>
+        
             Our state-of-the-art spacecraft are designed for maximum comfort and
             safety, so you can relax and enjoy the ride while our experienced
             crew takes care of everything else. Whether you’re a space
@@ -48,6 +50,7 @@ const Home = () => {
             safe, enjoyable, and truly unforgettable experience.
           </p>
         </div>
+   
       </div>
       <div>
         <div className={styles.outFlightBox}>
@@ -59,12 +62,13 @@ const Home = () => {
               {flights && (
                 <>
                   {flights.map((flight) => (
-                    <div key={flight.id}>
-                      <h3>Departure Origin: {flight.depart}</h3>
+                    <>
+                      <h3>Departure Origon: {flight.depart}</h3>
                       <p>Flight Time: {flight.departime}</p>
                       <p>Flight Date: {flight.depardate}</p>
-                      <hr />
-                    </div>
+
+                      <hr></hr>
+                    </>
                   ))}
                 </>
               )}
@@ -76,9 +80,10 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.someElseBox}>
-        <h1>Graphics box</h1>
-        <p>Add some images</p>
+       
+        <Image src={gal} height="500" width="650" alt="" />
       </div>
+     
       <div className="main"></div>
     </>
   );
