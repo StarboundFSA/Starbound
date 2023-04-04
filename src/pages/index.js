@@ -1,8 +1,6 @@
 import react from "react";
 import Link from "next/link";
 import useSupabase from "../../supabase";
-import Auth from "../../components/Auth";
-import FlightCard from "./FlightCard";
 import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/Flights.module.css";
 import { useEffect, useState } from "react";
