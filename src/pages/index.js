@@ -22,7 +22,6 @@ const Home = () => {
         console.log("Error: ", error);
       }
       if (data) {
-        console.log(data);
         setflights(data);
         setFetchError(null);
       }
@@ -63,11 +62,12 @@ const Home = () => {
                 <>
                   {flights.map((flight) => (
                     <>
-                      <h3>Departure Origon: {flight.depart}</h3>
-                      <p>Flight Time: {flight.departime}</p>
-                      <p>Flight Date: {flight.depardate}</p>
-
-                      <hr></hr>
+                      <div key={flight.id}>
+                        <h3>Departure Origin: {flight.depart}</h3>
+                        <p>Flight Time: {flight.departime}</p>
+                        <p>Flight Date: {flight.depardate}</p>
+                        <hr></hr>
+                      </div>
                     </>
                   ))}
                 </>
