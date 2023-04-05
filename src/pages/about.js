@@ -2,6 +2,8 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import robStyles from "@/styles/robsStyles/About.module.css";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
+import Image from "next/image";
+import Img4 from "../../public/Imgs/Img4.jpg";
 
 const About = () => {
   return (
@@ -38,7 +40,7 @@ const About = () => {
           So why wait? Contact us today to start planning your journey to the
           stars with Starbound!
         </p>
-
+        <Image src={Img4} alt="/" width={3121}></Image>
         {/* <br></br>
         <div className={robStyles.btnStyle}>
           <Link href="/aboutus">
