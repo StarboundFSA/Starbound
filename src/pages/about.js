@@ -11,8 +11,8 @@ const About = () => {
       {/* <h1>About page</h1> */}
       <div className={robStyles.abtBox}>
         <p>
-          Welcome to Starbound, the premier space tourism company for those
-          seeking a truly out-of-this-world experience.
+          We are the premier space tourism company for those seeking a truly
+          out-of-this-world experience.
         </p>
         <br></br>
         <p>
@@ -40,6 +40,8 @@ const About = () => {
           So why wait? Contact us today to start planning your journey to the
           stars with Starbound!
         </p>
+        <br></br>
+        <br></br>
         <Image src={Img4} alt="/" width={3121}></Image>
         {/* <br></br>
         <div className={robStyles.btnStyle}>

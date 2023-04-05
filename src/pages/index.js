@@ -38,6 +38,7 @@ const Home = () => {
       <div className={styles.indexBox}>
         <div className={styles.welcBox}>
           <h1>WELCOME TO STARBOUND</h1>
+          <br></br>
 
           <p>
             Our state-of-the-art spacecraft are designed for maximum comfort and

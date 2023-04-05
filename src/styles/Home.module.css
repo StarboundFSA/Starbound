@@ -14,6 +14,8 @@
   text-align: center;
   border: solid whitesmoke 5px;
   color: whitesmoke;
+  letter-spacing: 5px;
+  font-weight: bold;
   transition-property: background color;
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -580,13 +582,12 @@
   color: white;
   border: #0070f3 solid 1px;
 }
-.googleButton{
+.googleButton {
   background-color: #935f5f;
   border-radius: 15px;
-  color: white;;
+  color: white;
 }
-.googleButton:hover{
-  border: #2F4F4F solid 1px;
-  
+.googleButton:hover {
+  border: #2f4f4f solid 1px;
 }
 /* ---Cart Styling */

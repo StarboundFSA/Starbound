@@ -20,19 +20,22 @@
   color: whitesmoke;
   font-size: XX-large;
   display: inline-block;
+  letter-spacing: 5px;
+  font-weight: bold;
 }
-  
+
 .desPlnts > * {
   margin: 10px;
   padding: 10px;
   border: solid whitesmoke 5px;
-  color: 	#2F4F4F;
+  color: #2f4f4f;
   transition-property: background color;
   transition-duration: 2s;
   transition-timing-function: linear;
- 
+  font-weight: bolder;
+  letter-spacing: 1px;
 }
-  
+
 .desPlntsText {
   font-size: large;
   max-width: 600px;
@@ -43,7 +46,7 @@
   margin: 5px;
   padding: 5px;
   border: solid whitesmoke 2px;
-  color: 	#2F4F4F;
+  color: #2f4f4f;
   display: inline-block;
   transition-property: background color;
   transition-duration: 2s;
@@ -51,11 +54,11 @@
 }
 
 .desPlntsText:hover {
-  background-color: #00308F;
+  background-color: #00308f;
   color: whitesmoked;
 }
 
 .desBttn:hover {
-  background-color: #00308F;
+  background-color: #00308f;
   color: whitesmoked;
 }

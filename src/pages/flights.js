@@ -86,15 +86,14 @@ const Flights = () => {
           </Link>
         </div>
         <p className={robStyles.textBox}>
-          Welcome to Starbound Flights, the premier space tourism company for
-          those seeking a truly out-of-this-world experience. Our mission is to
-          make space travel accessible and safe for everyone, so that you can
-          experience the thrill of exploring the cosmos for yourself.
+          Starbound Flights, the premier space tourism company for those seeking
+          a truly out-of-this-world experience. Are you ready to experience the
+          thrill of exploring the cosmos for yourself?
         </p>
         <div>
-          {/* <Link className={styles.btnStyle} href="/AddFlight">
+          <Link className={styles.btnStyle} href="/AddFlight">
             Add New Flight
-          </Link> */}
+          </Link>
 
           {fetchError && <p>{fetchError}</p>}
           {flights && (
@@ -102,10 +101,10 @@ const Flights = () => {
               {flights.map((flight, index) => (
                 <div key={index} className={robStyles.flightCardBox}>
                   <h2 className={robStyles.flightCardText}>
-                    {flight.depart} <span /> {flight.destination}
+                    {flight.depart} to <span /> {flight.destination}
                   </h2>
                   <p className={robStyles.flightCardText}>
-                    Depart Origon: <span />
+                    Depart Origin: <span />
                     {flight.depart}
                   </p>
                   <p className={robStyles.flightCardText}>
@@ -125,11 +124,10 @@ const Flights = () => {
                     {flight.returndate}
                   </p>
                   <p className={robStyles.flightCardText}>
-                    Dragon Price: $ <span />
-                    {flight.price}
+                    Dragon Price: <span />${flight.price}
                   </p>
                   <div className={robStyles.flightCardBttn}>
-                    {/* <button
+                    <button
                       className={styles.btnStyle}
                       onClick={() => handleEdit(flight.id)}
                     >
@@ -140,7 +138,8 @@ const Flights = () => {
                       onClick={() => handleDelete(flight.id)}
                     >
                       Delete
-                    </button> */}
+                    </button>
+
                     <button
                       className={styles.btnStyle}
                       onClick={() => handleAddToCart(flight)}
